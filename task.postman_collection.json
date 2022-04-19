@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "fd3e28d3-0cd5-4859-a220-bfe979617786",
+		"name": "task",
+		"description": "containing requests hitting the é endpoints:\n1 - creating posts\n2 - subscribing a user to a specific website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "website_id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "a post for website 1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "a description for the post",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/posts/store",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribing a user to a specific website (using IDs)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/users/1/subscribe/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"subscribe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
